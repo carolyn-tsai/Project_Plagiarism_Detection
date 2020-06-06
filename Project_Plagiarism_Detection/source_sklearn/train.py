@@ -8,6 +8,10 @@ from sklearn.externals import joblib
 
 ## TODO: Import any additional libraries you need to define a model
 
+# Comment out SVM to test other model
+# from sklearn.svm import SVC 
+
+from sklearn.ensemble import RandomForestClassifier
 
 # Provided model load function
 def model_fn(model_dir):
@@ -40,6 +44,7 @@ if __name__ == '__main__':
     
     ## TODO: Add any additional arguments that you will need to pass into your model
     
+
     # args holds all passed-in arguments
     args = parser.parse_args()
 
@@ -54,14 +59,18 @@ if __name__ == '__main__':
     
     ## --- Your code here --- ##
     
-
-    ## TODO: Define a model 
-    model = None
+    # Comment out SVM to test other model
+    # svclassifier = SVC(kernel="linear") 
+    model = RandomForestClassifier(max_depth=3, random_state=42)
     
+    ## TODO: Define a model 
+    
+    # Comment out SVM to test other model
+    # model = svclassifier
     
     ## TODO: Train the model
     
-    
+    model.fit(train_x, train_y)
     
     ## --- End of your code  --- ##
     
