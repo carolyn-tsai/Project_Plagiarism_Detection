@@ -44,7 +44,6 @@ if __name__ == '__main__':
     
     ## TODO: Add any additional arguments that you will need to pass into your model
     
-
     # args holds all passed-in arguments
     args = parser.parse_args()
 
@@ -61,12 +60,12 @@ if __name__ == '__main__':
     
     # Comment out SVM to test other model
     # svclassifier = SVC(kernel="linear") 
-    model = RandomForestClassifier(max_depth=3, random_state=42)
     
     ## TODO: Define a model 
     
     # Comment out SVM to test other model
     # model = svclassifier
+    model = RandomForestClassifier(max_depth=3, random_state=42)
     
     ## TODO: Train the model
     
